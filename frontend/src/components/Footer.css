@@ -1,0 +1,290 @@
+@import '../styles/theme.css';
+
+/* Main Footer Container */
+.farm-footer {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to bottom, #f4f1e9, #e9e2c9);
+  color: #3a3a3a;
+  overflow: hidden;
+  font-family: var(--font-primary);
+  margin-top: 3rem;
+}
+
+/* Wheat Field Animation */
+.wheat-field-container {
+  position: relative;
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to top, #e9e2c9, #f8f4e1);
+}
+
+.wheat-field {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheat-stalk {
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to top, #d4b82e, #e8d772);
+  border-radius: 2px;
+  transform-origin: bottom center;
+  animation: sway 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.wheat-head {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 25px;
+  background: #f0d264;
+  clip-path: polygon(
+    0% 0%, 20% 10%, 0% 20%, 20% 30%, 
+    0% 40%, 20% 50%, 0% 60%, 20% 70%, 
+    0% 80%, 20% 90%, 0% 100%, 100% 100%, 
+    80% 90%, 100% 80%, 80% 70%, 100% 60%, 
+    80% 50%, 100% 40%, 80% 30%, 100% 20%, 
+    80% 10%, 100% 0%
+  );
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Footer Content */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem 5% 2rem;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-top: 2px solid rgba(212, 184, 46, 0.3);
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 0 1rem 2rem;
+}
+
+.footer-section h3 {
+  color: #6b5c11;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #d4b82e, transparent);
+}
+
+/* Contact Info Section */
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #d4b82e;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #d4b82e;
+}
+
+.contact-details p {
+  margin: 0.5rem 0;
+}
+
+.contact-details a {
+  color: #3a3a3a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #d4b82e;
+}
+
+/* Quick Links Section */
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.quick-links li::before {
+  content: '🌾';
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+  color: #d4b82e;
+}
+
+.quick-links a {
+  color: #3a3a3a;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.quick-links a:hover {
+  color: #d4b82e;
+  transform: translateX(5px);
+}
+
+/* Newsletter Section */
+.newsletter p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e8d772;
+  border-radius: 8px 0 0 8px;
+  font-family: var(--font-primary);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-form input:focus {
+  border-color: #d4b82e;
+}
+
+.newsletter-form button {
+  background: linear-gradient(to right, #d4b82e, #e8d772);
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(to right, #c4a929, #d4b82e);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: rgba(212, 184, 46, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(212, 184, 46, 0.2);
+}
+
+.social-icons {
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  color: #6b5c11;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) rotate(10deg);
+  background: #f0d264;
+  color: white;
+}
+
+.copyright {
+  color: #6b5c11;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  
+  .footer-section {
+    margin: 0 0 2rem;
+  }
+  
+  .wheat-field-container {
+    height: 80px;
+  }
+  
+  .wheat-stalk {
+    width: 2px;
+  }
+  
+  .wheat-head {
+    width: 8px;
+    height: 18px;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Additional Animation for Wheat */
+@keyframes grow {
+  0% { height: 0; opacity: 0; }
+  100% { height: 100%; opacity: 1; }
+}
+
+.wheat-stalk {
+  animation: sway 4s ease-in-out infinite, grow 2s ease-out;
+}

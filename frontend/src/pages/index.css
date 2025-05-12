@@ -1,0 +1,179 @@
+@import '../styles/theme.css';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('https://img.freepik.com/free-photo/detail-rice-plant-sunset-valencia-with-plantation-out-focus-rice-grains-plant-seed_181624-25838.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(74, 140, 52, 0.2) 0%, rgba(0, 0, 0, 0.4) 70%);
+  z-index: 1;
+}
+
+.signup-form {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.signup-form h2 {
+  color: var(--primary-dark);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-lg);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.signup-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
+  border-radius: var(--radius-full);
+}
+
+.signup-form label {
+  display: block;
+  margin: var(--space-md) 0 var(--space-xs);
+  text-align: left;
+  font-weight: 500;
+  color: var(--neutral-dark);
+  font-size: var(--text-base);
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--neutral-light);
+  border-radius: var(--radius-md);
+  box-sizing: border-box;
+  font-size: var(--text-base);
+  transition: all var(--transition-normal);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-lightest);
+  background-color: white;
+}
+
+.signup-form button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-top: var(--space-md);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s;
+}
+
+.signup-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.signup-form button:hover::before {
+  left: 100%;
+}
+
+.signup-form p {
+  margin-top: var(--space-lg);
+  color: var(--neutral);
+  font-size: var(--text-base);
+}
+
+.signup-form a {
+  color: var(--primary-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.signup-form a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-dark);
+  transition: width var(--transition-normal);
+}
+
+.signup-form a:hover {
+  color: var(--primary);
+}
+
+.signup-form a:hover::after {
+  width: 100%;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .signup-form {
+    width: 90%;
+    padding: var(--space-lg);
+  }
+}

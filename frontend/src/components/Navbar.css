@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+@import '../styles/theme.css';
+
+.sample {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  height: 90px;
+  width: 100%;
+  padding: 0 var(--space-xl);
+  transition: all var(--transition-normal);
+}
+
+/* Brand section */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-main {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all var(--transition-normal);
+}
+
+.logo-main:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  transition: all var(--transition-fast);
+  height: 100%;
+}
+
+.nav-item:hover {
+  transform: translateY(-2px);
+}
+
+.nav-links a {
+  color: var(--primary);
+  position: relative;
+  padding: var(--space-xs) var(--space-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav-links a:hover {
+  color: var(--primary-dark);
+}
+
+.nav-icon {
+  font-size: var(--text-lg);
+  transition: all var(--transition-fast);
+}
+
+.nav-item:hover .nav-icon {
+  transform: translateY(-2px);
+}
+
+.nav-links hr {
+  position: absolute;
+  bottom: -5px;
+  border: none;
+  width: 0;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  transition: width var(--transition-normal);
+}
+
+.nav-item:hover hr,
+.nav-item hr {
+  width: 80%;
+}
+
+/* Auth buttons styling */
+.login-btn a, .register-btn a, .logout-btn div, .user-greeting {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  color: white;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.login-btn a:hover, .register-btn a:hover, .logout-btn div:hover {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.login-btn hr, .register-btn hr, .logout-btn hr {
+  display: none;
+}
+
+.register-btn a {
+  background: linear-gradient(135deg, var(--success-light) 0%, var(--success) 100%);
+}
+
+.register-btn a:hover {
+  background: linear-gradient(135deg, var(--success) 0%, var(--success-dark) 100%);
+}
+
+.logout-btn div {
+  background: linear-gradient(135deg, var(--neutral-light) 0%, var(--neutral) 100%);
+  cursor: pointer;
+}
+
+.logout-btn div:hover {
+  background: linear-gradient(135deg, var(--neutral) 0%, var(--neutral-dark) 100%);
+}
+
+.user-greeting {
+  background: linear-gradient(135deg, var(--primary-lightest) 0%, var(--primary-light) 30%);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* Divider */
+.nav-divider {
+  height: 30px;
+  width: 1px;
+  background-color: var(--neutral-light);
+  margin: 0 var(--space-sm);
+}
+
+/* Right section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.icon1 {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform var(--transition-normal);
+}
+
+.icon1:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-lightest) 0%, var(--primary-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  color: var(--primary-dark);
+  font-size: var(--text-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+  transform: rotate(30deg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Mobile menu toggle */
+.mobile-toggle {
+  display: none;
+  font-size: var(--text-2xl);
+  color: var(--primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobile-toggle:hover {
+  color: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+/* Add a gradient effect to the navbar on scroll */
+.sample.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-md);
+  height: 80px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .sample {
+    padding: 0 var(--space-lg);
+  }
+  
+  .nav-item {
+    margin: 0 var(--space-sm);
+  }
+  
+  .nav-links a {
+    font-size: var(--text-sm);
+  }
+  
+  .icon1 {
+    width: 120px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sample {
+    padding: 0 var(--space-md);
+  }
+  
+  .mobile-toggle {
+    display: flex;
+    margin-left: var(--space-md);
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--space-xl) 0;
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    transform: translateX(0);
+  }
+  
+  .nav-item {
+    margin: var(--space-md) 0;
+    height: auto;
+  }
+  
+  .nav-links a {
+    font-size: var(--text-lg);
+    padding: var(--space-md);
+  }
+  
+  .nav-icon {
+    font-size: var(--text-xl);
+    margin-right: var(--space-sm);
+  }
+  
+  .nav-divider {
+    width: 80%;
+    height: 1px;
+    margin: var(--space-md) 0;
+  }
+  
+  .login-btn, .register-btn, .logout-btn, .user-info {
+    margin-top: var(--space-lg);
+  }
+  
+  .login-btn a, .register-btn a, .logout-btn div, .user-greeting {
+    padding: var(--space-sm) var(--space-xl);
+  }
+  
+  .icon1 {
+    display: none;
+  }
+  
+  /* Prevent scrolling when menu is open */
+  .sample.menu-open {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+/* Animation for mobile menu */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.nav-links.active .nav-item {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.nav-links.active .nav-item:nth-child(1) { animation-delay: 0.1s; }
+.nav-links.active .nav-item:nth-child(2) { animation-delay: 0.2s; }
+.nav-links.active .nav-item:nth-child(3) { animation-delay: 0.3s; }
+.nav-links.active .nav-item:nth-child(4) { animation-delay: 0.4s; }
+.nav-links.active .nav-item:nth-child(6) { animation-delay: 0.5s; }
